@@ -197,9 +197,9 @@ class Service(object):
                 os.remove(self.get_nginx_config_path(config_type))
             except OSError:
                 logger.error('[service][%s]: deleting nginx config is failed' % self.id)
-                return false
+                return False
 
-        return true
+        return True
 
     def __del__(self):
         if self.active:
