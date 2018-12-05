@@ -35,8 +35,4 @@ class ServiceWatcher(object):
         for service_name in self.services.keys():
             if service_name not in services_to_publish.iterkeys():
                 vergilius.logger.info('[service watcher]: removing stale service: %s' % service_name)
-                service = self.services[service_name]
-                if service.delete():
-                    del self.services[service_name]
-
-        port_allocator.collect_garbage
+                del self.services[service_name]
