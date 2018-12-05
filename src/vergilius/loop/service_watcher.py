@@ -38,5 +38,4 @@ class ServiceWatcher(object):
                 service = self.services[service_name]
                 if service.delete():
                     del self.services[service_name]
-
-        port_allocator.collect_garbage
+                    port_allocator.collect_garbage()
